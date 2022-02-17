@@ -12,3 +12,17 @@ protocol ChargerProtocol {
     func convert(chargeablemAhPerHour: Double) -> Double
 }
 
+class Charger: ChargerProtocol {
+    
+    var chargemAhPerHour: Double
+    
+    init(chargemAhPerHour: Double) {
+        self.chargemAhPerHour = chargemAhPerHour
+    }
+    
+    func convert(chargeablemAhPerHour: Double) -> Double {
+        return chargemAhPerHour > chargeablemAhPerHour ? chargeablemAhPerHour : chargemAhPerHour
+    }
+    
+    
+}
