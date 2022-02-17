@@ -7,22 +7,17 @@
 
 import Foundation
 
-protocol ChargerProtocol {
+protocol Chargeable {
     var chargemAhPerHour: Double { get set }
     func convert(chargeablemAhPerHour: Double) -> Double
 }
 
-class Charger: ChargerProtocol {
+struct Charger: Chargeable {
     
     var chargemAhPerHour: Double
-    
-    init(chargemAhPerHour: Double) {
-        self.chargemAhPerHour = chargemAhPerHour
-    }
-    
+
     func convert(chargeablemAhPerHour: Double) -> Double {
         return chargemAhPerHour > chargeablemAhPerHour ? chargeablemAhPerHour : chargemAhPerHour
     }
-    
     
 }
